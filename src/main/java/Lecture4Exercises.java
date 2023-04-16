@@ -5,7 +5,10 @@ public class Lecture4Exercises {
      *   lecture 4 page 15
      */
     public long factorial(int n) {
-        return 0L;
+        long temp = 1;
+        for(int i = 1 ; i <= n ; i++)
+            temp *= i;
+        return temp;
     }
 
     /*
@@ -14,7 +17,16 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public long fibonacci(int n) {
-        return 0;
+        long a = 1,b = 1,c = 2;
+        for(int i = 3 ; i <= n ; i++)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        if(n == 1 || n == 2)
+            return 0;
+        return c;
     }
 
     /*
@@ -22,7 +34,12 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public String reverse(String word) {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        for(int i = word.length() - 1; i >= 0;i--)
+        {
+            sb.append(word.charAt(i));
+        }
+        return sb.toString();
     }
 
     /*
@@ -32,7 +49,16 @@ public class Lecture4Exercises {
      *   lecture 4 page 19
      */
     public boolean isPalindrome(String line) {
-        return false;
+        String l ="";
+        for(int i = 0; i < line.length(); i++) {
+            if(line.charAt(i)!=' ')
+                line += line.charAt(i);
+        }
+        for(int i = 0 ; i <= line.length() / 2; i++) {
+            if(Character.toUpperCase(line.charAt(i)) != Character.toUpperCase(line.charAt(line.length() - i -1 )))
+                return false;
+        }
+        return true;
     }
 
     /*
