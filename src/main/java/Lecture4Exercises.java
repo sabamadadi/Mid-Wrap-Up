@@ -48,14 +48,14 @@ public class Lecture4Exercises {
      *   palindrome is like 'wow', 'never odd or even', 'Wow'
      *   lecture 4 page 19
      */
-    public boolean isPalindrome(String line) {
+    public boolean isPalindrome(String line_x) {
         String l ="";
-        for(int i = 0; i < line.length(); i++) {
-            if(line.charAt(i)!=' ')
-                line += line.charAt(i);
+        for(int i = 0; i < line_x.length(); i++) {
+            if(line_x.charAt(i)!=' ')
+                line_x = line_x +  line_x.charAt(i);
         }
-        for(int i = 0 ; i <= line.length() / 2; i++) {
-            if(Character.toUpperCase(line.charAt(i)) != Character.toUpperCase(line.charAt(line.length() - i -1 )))
+        for(int i = 0 ; i <= line_x.length() / 2; i++) {
+            if(Character.toUpperCase(line_x.charAt(i)) != Character.toUpperCase(line_x.charAt(line_x.length() - i -1 )))
                 return false;
         }
         return true;
@@ -73,6 +73,16 @@ public class Lecture4Exercises {
      *   lecture 4 page 26
      */
     public char[][] dotPlot(String str1, String str2) {
-        return null;
+        char [][] a = new char[str1.length()][str2.length()];
+        for(int i = 0 ;i <str1.length(); i++) {
+            for(int j = 0 ; j <str2.length();j++)
+            {
+                if(str1.charAt(i) != str2.charAt(j))
+                    a[i][j] = ' ';
+                else
+                    a[i][j] = '*';
+            }
+        }
+        return a;
     }
 }
